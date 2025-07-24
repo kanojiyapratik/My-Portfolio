@@ -31,23 +31,26 @@ const Projects = () => {
       ],
     },
     {
-      title: "PasteApp",
+      title: "PasteX – Modern Paste Application",
       description:
-        "PasteApp is a lightweight, user-friendly web application built with React, Redux, React Router, and Tailwind CSS. It allows users to create, edit, view, and manage text snippets ('pastes') directly in the browser using localStorage.",
+        "PasteX is a sleek, modern web application for creating, editing, and managing text snippets (\"pastes\") right in your browser. Built with React, Redux, and Tailwind CSS, PasteX features a beautiful dark UI, glassmorphism effects, instant search, and a focus on privacy. All your pastes are stored locally for speed and security—no accounts, no servers, just you and your notes.",
       status: "Completed",
       statusColor: "bg-green-500",
       icon: Recycle,
-      technologies: ["React.js", "Redux", "React Router", "Tailwind CSS", "localStorage"],
+      technologies: ["React.js (Vite)", "Redux Toolkit", "Tailwind CSS", "Lucide Icons", "React Hot Toast"],
       features: [
-        "Create and save custom text snippets",
-        "Edit and delete existing pastes",
-        "Unique ID and URL-based paste access",
-        "LocalStorage for persistent data",
-        "Clean and responsive user interface",
-        "Fully client-side with no backend needed",
+        "Create, edit, and view pastes instantly",
+        "Modern dark UI with glassmorphism",
+        "Instant search and one-click copy",
+        "Local storage for privacy—no accounts needed",
+        "Responsive and animated design",
       ],
       github: "https://github.com/skullpratik/paste-application",
       live: "https://steady-blancmange-d8e627.netlify.app/",
+      screenshots: [
+        "/pastex-1.png",
+        "/pastex-2.png",
+      ],
     },
     {
       title: "3D Advertisement with Responsive Webpage",
@@ -87,7 +90,9 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className={`bg-white/10 border border-cyan-400/20 backdrop-blur-lg hover:shadow-cyan-400/30 transition-all duration-300 hover:-translate-y-1 animate-fade-in group ${index === 0 ? 'lg:col-span-2 border-2 border-yellow-400/60 shadow-xl relative' : ''}`}
+              className={`bg-white/10 border border-cyan-400/20 backdrop-blur-lg hover:shadow-cyan-400/30 transition-all duration-300 hover:-translate-y-1 animate-fade-in group
+                ${index === 0 ? 'lg:col-span-2 border-2 border-yellow-400/60 shadow-xl relative' : ''}
+                ${index === 1 ? 'border-2 border-blue-400/60 shadow-lg relative bg-white/20 backdrop-blur-2xl' : ''}`}
             >
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between">
@@ -99,6 +104,9 @@ const Projects = () => {
                       <CardTitle className="text-xl font-semibold text-cyan-200 group-hover:text-yellow-300 transition-colors">
                         {project.title}
                       </CardTitle>
+                      {index === 1 && (
+                        <span className="inline-block mt-1 px-2 py-0.5 text-xs font-bold rounded bg-blue-300 text-blue-900 shadow-sm animate-pulse ml-2">Modern App</span>
+                      )}
                       {index === 0 && (
                         <span className="inline-block mt-1 px-2 py-0.5 text-xs font-bold rounded bg-yellow-300 text-yellow-900 shadow-sm animate-pulse ml-2">Featured Project</span>
                       )}
@@ -111,17 +119,17 @@ const Projects = () => {
               </CardHeader>
 
               <CardContent className="space-y-6">
-                {/* Screenshot Carousel for Laundry Business Project */}
-                {index === 0 && project.screenshots && (
+                {/* Screenshot Carousel for PasteX Project */}
+                {index === 1 && project.screenshots && (
                   <div className="mb-4">
-                    <Carousel className="relative w-full max-w-2xl mx-auto">
+                    <Carousel className="relative w-full max-w-xl mx-auto">
                       <CarouselContent>
                         {project.screenshots.map((src, i) => (
                           <CarouselItem key={i} className="flex justify-center items-center">
                             <img
                               src={src}
-                              alt={`SKLdrycleaner's screenshot ${i + 1}`}
-                              className="rounded-lg shadow-lg object-contain max-h-56 w-full border border-cyan-400/30 bg-white/10"
+                              alt={`PasteX screenshot ${i + 1}`}
+                              className="rounded-lg shadow-lg object-contain max-h-56 w-full border border-blue-400/30 bg-white/10"
                             />
                           </CarouselItem>
                         ))}
@@ -135,6 +143,10 @@ const Projects = () => {
                   {index === 0 ? (
                     <>
                       <span className="font-semibold text-yellow-200">SKLdrycleaner's</span> is a full-stack MERN web application that transforms traditional laundry services into a seamless digital experience. Customers can register, book services, track orders, and pay online, while admins manage all bookings and business operations from a powerful dashboard. The platform is designed for real-world business needs, with a focus on automation, security, and a modern, mobile-friendly UI.
+                    </>
+                  ) : index === 1 ? (
+                    <>
+                      <span className="font-semibold text-blue-200">PasteX</span> is a modern, privacy-first paste manager for quickly creating, editing, and searching text snippets in your browser. Enjoy a beautiful dark UI, glassmorphism effects, and instant usability—no accounts, no servers, just you and your notes.
                     </>
                   ) : project.description}
                 </p>
