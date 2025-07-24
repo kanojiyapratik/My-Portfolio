@@ -50,8 +50,6 @@ const Projects = () => {
       screenshots: [
         "paste1.png",
         "paste2.png",
-        "paste3.png",
-        "paste4.png",
       ],
     },
     {
@@ -96,52 +94,20 @@ const Projects = () => {
                 ${index === 0 ? 'lg:col-span-2 border-2 border-yellow-400/60 shadow-xl relative' : ''}
                 ${index === 1 ? 'lg:col-span-2 border-2 border-blue-400/60 shadow-xl relative bg-white/20 backdrop-blur-2xl' : ''}`}
             >
-              <CardHeader className="pb-2">
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center space-x-3">
-                    <div className="p-2 bg-gradient-primary rounded-lg">
-                      <project.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <CardTitle className="text-xl font-semibold text-cyan-200 group-hover:text-yellow-300 transition-colors">
-                        {project.title}
-                      </CardTitle>
-                      {index === 1 && (
-                        <span className="inline-block mt-1 px-2 py-0.5 text-xs font-bold rounded bg-blue-300 text-blue-900 shadow-sm animate-pulse ml-2">Modern App</span>
-                      )}
-                      {index === 0 && (
-                        <span className="inline-block mt-1 px-2 py-0.5 text-xs font-bold rounded bg-yellow-300 text-yellow-900 shadow-sm animate-pulse ml-2">Featured Project</span>
-                      )}
-                    </div>
-                  </div>
-                  <Badge className={`${project.statusColor} text-white`}>
-                    {project.status}
-                  </Badge>
-                </div>
-              </CardHeader>
-
-              <CardContent className="space-y-2">
-                {/* Screenshot Carousel for Laundry Project */}
-                {index === 0 && project.screenshots && (
-                  <div className="mb-1">
-                    <Carousel className="relative w-full max-w-2xl mx-auto">
-                      <CarouselContent>
-                        {project.screenshots.map((src, i) => (
-                          <CarouselItem key={i} className="inline-flex items-center justify-center p-0 m-0">
-                            <img
-                              src={`/${src}`}
-                              alt={`Laundry screenshot ${i + 1}`}
-                              className="rounded-lg shadow-lg object-contain max-h-40 border border-cyan-400/30 bg-white/10"
-                            />
-                          </CarouselItem>
-                        ))}
-                      </CarouselContent>
-                      <CarouselPrevious />
-                      <CarouselNext />
-                    </Carousel>
-                  </div>
+              {/* 1. Centered Heading */}
+              <div className="w-full text-center pt-4 pb-2">
+                <CardTitle className="text-2xl font-bold text-cyan-200">{project.title}</CardTitle>
+                {index === 1 && (
+                  <span className="inline-block mt-1 px-2 py-0.5 text-xs font-bold rounded bg-blue-300 text-blue-900 shadow-sm animate-pulse ml-2">Modern App</span>
                 )}
-                <p className="text-blue-100 leading-relaxed text-lg">
+                {index === 0 && (
+                  <span className="inline-block mt-1 px-2 py-0.5 text-xs font-bold rounded bg-yellow-300 text-yellow-900 shadow-sm animate-pulse ml-2">Featured Project</span>
+                )}
+                <Badge className={`ml-2 ${project.statusColor} text-white`}>{project.status}</Badge>
+              </div>
+              {/* 2. Project Description Full Width */}
+              <div className="w-full px-4 pb-2">
+                <p className="text-blue-100 text-base text-center md:text-left max-w-3xl mx-auto">
                   {index === 0 ? (
                     <>
                       <span className="font-semibold text-yellow-200">SKLdrycleaner's</span> is a full-stack MERN web application that transforms traditional laundry services into a seamless digital experience. Customers can register, book services, track orders, and pay online, while admins manage all bookings and business operations from a powerful dashboard. The platform is designed for real-world business needs, with a focus on automation, security, and a modern, mobile-friendly UI.
@@ -152,117 +118,126 @@ const Projects = () => {
                     </>
                   ) : project.description}
                 </p>
-                {/* Key Features */}
-                {index === 1 && (
+              </div>
+              {/* 3. Main Content Row: Left (content), Right (screenshots) */}
+              <div className="flex flex-col md:flex-row gap-4 px-2 pb-4">
+                {/* Left: Content */}
+                <div className="flex-1 min-w-0 space-y-2">
+                  {/* Key Features */}
                   <div>
-                    <h4 className="text-sm font-semibold text-purple-200 mb-2">Key Features:</h4>
+                    <h4 className="text-sm font-semibold text-purple-200 mb-1">Key Features:</h4>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       {project.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center text-blue-100">
-                          <span className="w-2 h-2 bg-blue-300 rounded-full mr-2 flex-shrink-0"></span>
+                          <span className={`w-2 h-2 rounded-full mr-2 flex-shrink-0 ${index === 0 ? 'bg-purple-300' : 'bg-blue-300'}`}></span>
                           {feature}
                         </li>
                       ))}
                     </ul>
                   </div>
-                )}
-                {/* Tech Stack & Integrations Section */}
-                {index === 1 && (
-                  <div className="bg-gradient-to-r from-blue-800/40 to-purple-900/30 border-l-4 border-blue-400 p-1 rounded-lg mt-0.5">
-                    <h4 className="text-blue-200 font-semibold mb-1">Tech Stack & Integrations</h4>
-                    <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
-                      <li>React (Vite) & Redux Toolkit for fast, stateful UI</li>
-                      <li>Tailwind CSS for modern, responsive design</li>
-                      <li>Lucide Icons & React Hot Toast for UX polish</li>
-                      <li>All data stored in browser localStorage for privacy</li>
-                    </ul>
+                  {/* Technologies */}
+                  <div>
+                    <h4 className="text-sm font-semibold text-purple-200 mb-1">Technologies Used:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span key={techIndex} className="px-2 py-1 rounded bg-purple-200/40 text-purple-100 text-sm font-mono">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                )}
-                {/* Why PasteX? Section */}
-                {index === 1 && (
-                  <div className="bg-blue-900/30 border-l-4 border-blue-300 p-1 rounded-lg shadow-inner mt-0.5">
-                    <h4 className="text-blue-200 font-semibold mb-1">Why PasteX?</h4>
-                    <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
-                      <li>No sign-up, no server—just instant, private note-taking</li>
-                      <li>Perfect for developers, writers, and anyone needing quick, beautiful text management</li>
-                      <li>Works offline and on any device</li>
-                    </ul>
-                  </div>
-                )}
-                {/* Technologies */}
-                <div>
-                  <h4 className="text-sm font-semibold text-purple-200 mb-2">Technologies Used:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="px-2 py-1 rounded bg-purple-200/40 text-purple-100 text-sm font-mono">
-                        {tech}
-                      </span>
-                    ))}
+                  {/* Extra Sections (Business Impact, Tech Stack, Why PasteX) */}
+                  {index === 0 && (
+                    <div className="bg-cyan-900/30 border-l-4 border-yellow-300 p-1 rounded-lg shadow-inner">
+                      <h4 className="text-yellow-200 font-semibold mb-1">Business Impact</h4>
+                      <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
+                        <li>Automates bookings, payments, and order tracking for both customers and staff</li>
+                        <li>Reduces manual errors and increases operational efficiency</li>
+                        <li>Improves customer satisfaction with real-time updates and easy access</li>
+                        <li>Enables business growth by supporting online and offline workflows</li>
+                      </ul>
+                    </div>
+                  )}
+                  {index === 0 && (
+                    <div className="bg-gradient-to-r from-cyan-800/40 to-purple-900/30 border-l-4 border-cyan-400 p-1 rounded-lg mt-0.5">
+                      <h4 className="text-cyan-200 font-semibold mb-1">Tech Stack & Integrations</h4>
+                      <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
+                        <li>MERN stack: MongoDB, Express.js, React.js, Node.js</li>
+                        <li>Authentication & authorization for secure access</li>
+                        <li>Payment gateway integration for online transactions</li>
+                        <li>Responsive design with Tailwind CSS</li>
+                        <li>Admin dashboard for business analytics and control</li>
+                      </ul>
+                    </div>
+                  )}
+                  {index === 1 && (
+                    <div className="bg-gradient-to-r from-blue-800/40 to-purple-900/30 border-l-4 border-blue-400 p-1 rounded-lg mt-0.5">
+                      <h4 className="text-blue-200 font-semibold mb-1">Tech Stack & Integrations</h4>
+                      <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
+                        <li>React (Vite) & Redux Toolkit for fast, stateful UI</li>
+                        <li>Tailwind CSS for modern, responsive design</li>
+                        <li>Lucide Icons & React Hot Toast for UX polish</li>
+                        <li>All data stored in browser localStorage for privacy</li>
+                      </ul>
+                    </div>
+                  )}
+                  {index === 1 && (
+                    <div className="bg-blue-900/30 border-l-4 border-blue-300 p-1 rounded-lg shadow-inner mt-0.5">
+                      <h4 className="text-blue-200 font-semibold mb-1">Why PasteX?</h4>
+                      <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
+                        <li>No sign-up, no server—just instant, private note-taking</li>
+                        <li>Perfect for developers, writers, and anyone needing quick, beautiful text management</li>
+                        <li>Works offline and on any device</li>
+                      </ul>
+                    </div>
+                  )}
+                  {/* Action Buttons */}
+                  <div className="flex space-x-3 pt-2">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
+                    >
+                      <Button variant="outline" size="sm" className="w-full">
+                        <Github className="w-4 h-4 mr-2" />
+                        View Code
+                      </Button>
+                    </a>
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
+                    >
+                      <Button size="sm" className="w-full">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Live Demo
+                      </Button>
+                    </a>
                   </div>
                 </div>
-                {/* Key Features */}
-                <div>
-                  <h4 className="text-sm font-semibold text-purple-200 mb-2">Key Features:</h4>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    {project.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-blue-100">
-                        <span className="w-2 h-2 bg-purple-300 rounded-full mr-2 flex-shrink-0"></span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                {/* Right: Screenshot Carousel */}
+                <div className="flex-1 min-w-0 flex items-center justify-center">
+                  {project.screenshots && project.screenshots.length > 0 && (
+                    <Carousel className="relative w-full max-w-xs mx-auto">
+                      <CarouselContent>
+                        {project.screenshots.map((src, i) => (
+                          <CarouselItem key={i} className="inline-flex items-center justify-center p-0 m-0">
+                            <img
+                              src={`/${src}`}
+                              alt={`${index === 0 ? 'Laundry' : 'PasteX'} screenshot ${i + 1}`}
+                              className={`rounded-lg shadow-lg object-contain max-h-40 border ${index === 0 ? 'border-cyan-400/30' : 'border-blue-400/30'} bg-white/10`}
+                            />
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      <CarouselPrevious />
+                      <CarouselNext />
+                    </Carousel>
+                  )}
                 </div>
-                {/* Business Impact Section */}
-                {index === 0 && (
-                  <div className="bg-cyan-900/30 border-l-4 border-yellow-300 p-1 rounded-lg shadow-inner">
-                    <h4 className="text-yellow-200 font-semibold mb-1">Business Impact</h4>
-                    <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
-                      <li>Automates bookings, payments, and order tracking for both customers and staff</li>
-                      <li>Reduces manual errors and increases operational efficiency</li>
-                      <li>Improves customer satisfaction with real-time updates and easy access</li>
-                      <li>Enables business growth by supporting online and offline workflows</li>
-                    </ul>
-                  </div>
-                )}
-                {/* Tech Stack & Integrations Section */}
-                {index === 0 && (
-                  <div className="bg-gradient-to-r from-cyan-800/40 to-purple-900/30 border-l-4 border-cyan-400 p-1 rounded-lg mt-0.5">
-                    <h4 className="text-cyan-200 font-semibold mb-1">Tech Stack & Integrations</h4>
-                    <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
-                      <li>MERN stack: MongoDB, Express.js, React.js, Node.js</li>
-                      <li>Authentication & authorization for secure access</li>
-                      <li>Payment gateway integration for online transactions</li>
-                      <li>Responsive design with Tailwind CSS</li>
-                      <li>Admin dashboard for business analytics and control</li>
-                    </ul>
-                  </div>
-                )}
-                {/* Action Buttons */}
-                <div className="flex space-x-3 pt-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1"
-                  >
-                    <Button variant="outline" size="sm" className="w-full">
-                      <Github className="w-4 h-4 mr-2" />
-                      View Code
-                    </Button>
-                  </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1"
-                  >
-                    <Button size="sm" className="w-full">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </Button>
-                  </a>
-                </div>
-              </CardContent>
+              </div>
             </Card>
           ))}
         </div>
