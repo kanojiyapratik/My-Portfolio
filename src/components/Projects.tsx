@@ -24,10 +24,10 @@ const Projects = () => {
       github: "https://github.com/skullpratik/Online-laundry-service",
       live: "https://6873481af0a864273768c3ec--amazing-monstera-60ff65.netlify.app/",
       screenshots: [
-        "/Screenshot 2025-07-24 203844.png",
-        "/Screenshot 2025-07-24 204155.png",
-        "/Screenshot 2025-07-24 204255.png",
-        "/Screenshot 2025-07-24 204518.png",
+        "Screenshot 2025-07-24 203844.png",
+        "Screenshot 2025-07-24 204155.png",
+        "Screenshot 2025-07-24 204255.png",
+        "Screenshot 2025-07-24 204518.png",
       ],
     },
     {
@@ -48,10 +48,10 @@ const Projects = () => {
       github: "https://github.com/skullpratik/paste-application",
       live: "https://steady-blancmange-d8e627.netlify.app/",
       screenshots: [
-        "/pastex-1.png",
-        "/pastex-2.png",
-        "/Screenshot 2025-07-24 230837.png",
-        "/Screenshot 2025-07-24 230900.png",
+        "pastex-1.png",
+        "pastex-2.png",
+        "Screenshot 2025-07-24 230837.png",
+        "Screenshot 2025-07-24 230900.png",
       ],
     },
     {
@@ -75,7 +75,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-[#181824] via-[#232946] to-[#1a1a2e] scroll-mt-16 relative overflow-hidden">
+    <section id="projects" className="py-10 bg-gradient-to-b from-[#181824] via-[#232946] to-[#1a1a2e] scroll-mt-16 relative overflow-hidden">
       {/* SVG code pattern overlay */}
       <svg className="absolute inset-0 w-full h-full opacity-10 animate-pulse z-0" style={{pointerEvents:'none'}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1440 320"><path fill="#00bcd4" fillOpacity="0.2" d="M0,160L60,176C120,192,240,224,360,229.3C480,235,600,213,720,197.3C840,181,960,171,1080,181.3C1200,192,1320,224,1380,240L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"/></svg>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -120,10 +120,10 @@ const Projects = () => {
                 </div>
               </CardHeader>
 
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-3">
                 {/* Screenshot Carousel for PasteX Project */}
                 {index === 1 && project.screenshots && (
-                  <div className="mb-4">
+                  <div className="mb-2">
                     <Carousel className="relative w-full max-w-2xl mx-auto">
                       <CarouselContent>
                         {project.screenshots.map((src, i) => (
@@ -131,7 +131,7 @@ const Projects = () => {
                             <img
                               src={src}
                               alt={`PasteX screenshot ${i + 1}`}
-                              className="rounded-lg shadow-lg object-contain max-h-56 w-full border border-blue-400/30 bg-white/10"
+                              className="rounded-lg shadow-lg object-contain max-h-40 w-full border border-blue-400/30 bg-white/10"
                             />
                           </CarouselItem>
                         ))}
@@ -168,7 +168,7 @@ const Projects = () => {
                 )}
                 {/* Tech Stack & Integrations Section */}
                 {index === 1 && (
-                  <div className="bg-gradient-to-r from-blue-800/40 to-purple-900/30 border-l-4 border-blue-400 p-4 rounded-lg mt-2">
+                  <div className="bg-gradient-to-r from-blue-800/40 to-purple-900/30 border-l-4 border-blue-400 p-2 rounded-lg mt-1">
                     <h4 className="text-blue-200 font-semibold mb-1">Tech Stack & Integrations</h4>
                     <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
                       <li>React (Vite) & Redux Toolkit for fast, stateful UI</li>
@@ -180,7 +180,7 @@ const Projects = () => {
                 )}
                 {/* Why PasteX? Section */}
                 {index === 1 && (
-                  <div className="bg-blue-900/30 border-l-4 border-blue-300 p-4 rounded-lg shadow-inner mt-2">
+                  <div className="bg-blue-900/30 border-l-4 border-blue-300 p-2 rounded-lg shadow-inner mt-1">
                     <h4 className="text-blue-200 font-semibold mb-1">Why PasteX?</h4>
                     <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
                       <li>No sign-up, no server—just instant, private note-taking</li>
@@ -214,7 +214,7 @@ const Projects = () => {
                 </div>
                 {/* Business Impact Section */}
                 {index === 0 && (
-                  <div className="bg-cyan-900/30 border-l-4 border-yellow-300 p-4 rounded-lg shadow-inner">
+                  <div className="bg-cyan-900/30 border-l-4 border-yellow-300 p-2 rounded-lg shadow-inner">
                     <h4 className="text-yellow-200 font-semibold mb-1">Business Impact</h4>
                     <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
                       <li>Automates bookings, payments, and order tracking for both customers and staff</li>
@@ -226,7 +226,7 @@ const Projects = () => {
                 )}
                 {/* Tech Stack & Integrations Section */}
                 {index === 0 && (
-                  <div className="bg-gradient-to-r from-cyan-800/40 to-purple-900/30 border-l-4 border-cyan-400 p-4 rounded-lg mt-2">
+                  <div className="bg-gradient-to-r from-cyan-800/40 to-purple-900/30 border-l-4 border-cyan-400 p-2 rounded-lg mt-1">
                     <h4 className="text-cyan-200 font-semibold mb-1">Tech Stack & Integrations</h4>
                     <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
                       <li>MERN stack: MongoDB, Express.js, React.js, Node.js</li>
