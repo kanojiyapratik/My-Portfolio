@@ -50,6 +50,8 @@ const Projects = () => {
       screenshots: [
         "/pastex-1.png",
         "/pastex-2.png",
+        "/Screenshot 2025-07-24 230837.png",
+        "/Screenshot 2025-07-24 230900.png",
       ],
     },
     {
@@ -92,7 +94,7 @@ const Projects = () => {
               key={index}
               className={`bg-white/10 border border-cyan-400/20 backdrop-blur-lg hover:shadow-cyan-400/30 transition-all duration-300 hover:-translate-y-1 animate-fade-in group
                 ${index === 0 ? 'lg:col-span-2 border-2 border-yellow-400/60 shadow-xl relative' : ''}
-                ${index === 1 ? 'border-2 border-blue-400/60 shadow-lg relative bg-white/20 backdrop-blur-2xl' : ''}`}
+                ${index === 1 ? 'lg:col-span-2 border-2 border-blue-400/60 shadow-xl relative bg-white/20 backdrop-blur-2xl' : ''}`}
             >
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between">
@@ -122,7 +124,7 @@ const Projects = () => {
                 {/* Screenshot Carousel for PasteX Project */}
                 {index === 1 && project.screenshots && (
                   <div className="mb-4">
-                    <Carousel className="relative w-full max-w-xl mx-auto">
+                    <Carousel className="relative w-full max-w-2xl mx-auto">
                       <CarouselContent>
                         {project.screenshots.map((src, i) => (
                           <CarouselItem key={i} className="flex justify-center items-center">
@@ -150,6 +152,43 @@ const Projects = () => {
                     </>
                   ) : project.description}
                 </p>
+                {/* Key Features */}
+                {index === 1 && (
+                  <div>
+                    <h4 className="text-sm font-semibold text-purple-200 mb-2">Key Features:</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      {project.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center text-blue-100">
+                          <span className="w-2 h-2 bg-blue-300 rounded-full mr-2 flex-shrink-0"></span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {/* Tech Stack & Integrations Section */}
+                {index === 1 && (
+                  <div className="bg-gradient-to-r from-blue-800/40 to-purple-900/30 border-l-4 border-blue-400 p-4 rounded-lg mt-2">
+                    <h4 className="text-blue-200 font-semibold mb-1">Tech Stack & Integrations</h4>
+                    <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
+                      <li>React (Vite) & Redux Toolkit for fast, stateful UI</li>
+                      <li>Tailwind CSS for modern, responsive design</li>
+                      <li>Lucide Icons & React Hot Toast for UX polish</li>
+                      <li>All data stored in browser localStorage for privacy</li>
+                    </ul>
+                  </div>
+                )}
+                {/* Why PasteX? Section */}
+                {index === 1 && (
+                  <div className="bg-blue-900/30 border-l-4 border-blue-300 p-4 rounded-lg shadow-inner mt-2">
+                    <h4 className="text-blue-200 font-semibold mb-1">Why PasteX?</h4>
+                    <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
+                      <li>No sign-up, no server—just instant, private note-taking</li>
+                      <li>Perfect for developers, writers, and anyone needing quick, beautiful text management</li>
+                      <li>Works offline and on any device</li>
+                    </ul>
+                  </div>
+                )}
                 {/* Technologies */}
                 <div>
                   <h4 className="text-sm font-semibold text-purple-200 mb-2">Technologies Used:</h4>
