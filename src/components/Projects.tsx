@@ -24,10 +24,10 @@ const Projects = () => {
       github: "https://github.com/skullpratik/Online-laundry-service",
       live: "https://6873481af0a864273768c3ec--amazing-monstera-60ff65.netlify.app/",
       screenshots: [
-        "Screenshot 2025-07-24 203844.png",
-        "Screenshot 2025-07-24 204155.png",
-        "Screenshot 2025-07-24 204255.png",
-        "Screenshot 2025-07-24 204518.png",
+        "laundry1.png",
+        "laundry2.png",
+        "laundry3.png",
+        "laundry4.png",
       ],
     },
     {
@@ -48,10 +48,10 @@ const Projects = () => {
       github: "https://github.com/skullpratik/paste-application",
       live: "https://steady-blancmange-d8e627.netlify.app/",
       screenshots: [
-        "pastex-1.png",
-        "pastex-2.png",
-        "Screenshot 2025-07-24 230837.png",
-        "Screenshot 2025-07-24 230900.png",
+        "paste1.png",
+        "paste2.png",
+        "paste3.png",
+        "paste4.png",
       ],
     },
     {
@@ -129,7 +129,7 @@ const Projects = () => {
                         {project.screenshots.map((src, i) => (
                           <CarouselItem key={i} className="flex justify-center items-center">
                             <img
-                              src={src}
+                              src={`/${src}`}
                               alt={`PasteX screenshot ${i + 1}`}
                               className="rounded-lg shadow-lg object-contain max-h-40 w-full border border-blue-400/30 bg-white/10"
                             />
