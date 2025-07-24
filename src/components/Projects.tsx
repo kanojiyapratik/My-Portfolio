@@ -96,7 +96,7 @@ const Projects = () => {
                 ${index === 0 ? 'lg:col-span-2 border-2 border-yellow-400/60 shadow-xl relative' : ''}
                 ${index === 1 ? 'lg:col-span-2 border-2 border-blue-400/60 shadow-xl relative bg-white/20 backdrop-blur-2xl' : ''}`}
             >
-              <CardHeader className="pb-4">
+              <CardHeader className="pb-2">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center space-x-3">
                     <div className="p-2 bg-gradient-primary rounded-lg">
@@ -120,18 +120,18 @@ const Projects = () => {
                 </div>
               </CardHeader>
 
-              <CardContent className="space-y-3">
-                {/* Screenshot Carousel for PasteX Project */}
-                {index === 1 && project.screenshots && (
-                  <div className="mb-2">
+              <CardContent className="space-y-2">
+                {/* Screenshot Carousel for Laundry Project */}
+                {index === 0 && project.screenshots && (
+                  <div className="mb-1">
                     <Carousel className="relative w-full max-w-2xl mx-auto">
                       <CarouselContent>
                         {project.screenshots.map((src, i) => (
-                          <CarouselItem key={i} className="flex justify-center items-center">
+                          <CarouselItem key={i} className="inline-flex items-center justify-center p-0 m-0">
                             <img
                               src={`/${src}`}
-                              alt={`PasteX screenshot ${i + 1}`}
-                              className="rounded-lg shadow-lg object-contain max-h-40 w-full border border-blue-400/30 bg-white/10"
+                              alt={`Laundry screenshot ${i + 1}`}
+                              className="rounded-lg shadow-lg object-contain max-h-40 border border-cyan-400/30 bg-white/10"
                             />
                           </CarouselItem>
                         ))}
@@ -168,7 +168,7 @@ const Projects = () => {
                 )}
                 {/* Tech Stack & Integrations Section */}
                 {index === 1 && (
-                  <div className="bg-gradient-to-r from-blue-800/40 to-purple-900/30 border-l-4 border-blue-400 p-2 rounded-lg mt-1">
+                  <div className="bg-gradient-to-r from-blue-800/40 to-purple-900/30 border-l-4 border-blue-400 p-1 rounded-lg mt-0.5">
                     <h4 className="text-blue-200 font-semibold mb-1">Tech Stack & Integrations</h4>
                     <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
                       <li>React (Vite) & Redux Toolkit for fast, stateful UI</li>
@@ -180,7 +180,7 @@ const Projects = () => {
                 )}
                 {/* Why PasteX? Section */}
                 {index === 1 && (
-                  <div className="bg-blue-900/30 border-l-4 border-blue-300 p-2 rounded-lg shadow-inner mt-1">
+                  <div className="bg-blue-900/30 border-l-4 border-blue-300 p-1 rounded-lg shadow-inner mt-0.5">
                     <h4 className="text-blue-200 font-semibold mb-1">Why PasteX?</h4>
                     <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
                       <li>No sign-up, no server—just instant, private note-taking</li>
@@ -214,7 +214,7 @@ const Projects = () => {
                 </div>
                 {/* Business Impact Section */}
                 {index === 0 && (
-                  <div className="bg-cyan-900/30 border-l-4 border-yellow-300 p-2 rounded-lg shadow-inner">
+                  <div className="bg-cyan-900/30 border-l-4 border-yellow-300 p-1 rounded-lg shadow-inner">
                     <h4 className="text-yellow-200 font-semibold mb-1">Business Impact</h4>
                     <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
                       <li>Automates bookings, payments, and order tracking for both customers and staff</li>
@@ -226,7 +226,7 @@ const Projects = () => {
                 )}
                 {/* Tech Stack & Integrations Section */}
                 {index === 0 && (
-                  <div className="bg-gradient-to-r from-cyan-800/40 to-purple-900/30 border-l-4 border-cyan-400 p-2 rounded-lg mt-1">
+                  <div className="bg-gradient-to-r from-cyan-800/40 to-purple-900/30 border-l-4 border-cyan-400 p-1 rounded-lg mt-0.5">
                     <h4 className="text-cyan-200 font-semibold mb-1">Tech Stack & Integrations</h4>
                     <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
                       <li>MERN stack: MongoDB, Express.js, React.js, Node.js</li>
