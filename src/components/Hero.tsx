@@ -65,7 +65,7 @@ const Hero = () => {
       ctx.restore();
     }
 
-    function drawPlanets(time: number) {
+    function drawPlanets(time) {
       planets.forEach((planet, i) => {
         const angle = planet.angle + time * planet.speed;
         const x = sun.x() + Math.cos(angle) * planet.orbit;
@@ -86,7 +86,7 @@ const Hero = () => {
       });
     }
 
-    function animate(time: number) {
+    function animate(time) {
       drawUniverse();
       drawSun();
       drawPlanets(time);
@@ -102,6 +102,7 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen bg-gradient-hero relative overflow-hidden pt-16">
+      {/* 3D Solar System Background */}
       {/* Canvas Background */}
       <canvas
         id="hero-bg-canvas"
@@ -127,11 +128,10 @@ const Hero = () => {
                     Pratik Kanojiya
                   </span>{" "}
                   <br />
-                  <span className="text-yellow-300">A Full Stack MERN Developer</span>
+                  <span className="text-yellow-300 text-2xl sm:text-3xl lg:text-4xl font-semibold">Full Stack MERN Developer & 3D Web Integrator</span>
                 </h1>
-                <p className="text-lg sm:text-xl text-cyan-100 max-w-2xl">
-                  Building real-world solutions through clean, modern web development. 
-                  Computer Science student passionate about creating dynamic, user-friendly applications.
+                <p className="text-base sm:text-lg text-cyan-100 max-w-2xl">
+                  Full Stack MERN & 3D Web Developer building modern web applications with integrated interactive 3D models. Passionate about creating dynamic, user-friendly, and visually stunning digital experiences.
                 </p>
               </div>
 

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Clock, Recycle } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+import Autoplay from 'embla-carousel-autoplay';
 
 const Projects = () => {
   const projects = [
@@ -106,15 +107,17 @@ const Projects = () => {
                 <Badge className={`ml-2 ${project.statusColor} text-white`}>{project.status}</Badge>
               </div>
               {/* 2. Project Description Full Width */}
-              <div className="w-full px-4 pb-2">
-                <p className="text-blue-100 text-base text-center md:text-left max-w-3xl mx-auto">
+              <div className="w-full px-12 pb-2">
+                <p className="text-blue-100 text-base text-center md:text-left max-w-6xl mx-auto">
                   {index === 0 ? (
                     <>
-                      <span className="font-semibold text-yellow-200">SKLdrycleaner's</span> is a full-stack MERN web application that transforms traditional laundry services into a seamless digital experience. Customers can register, book services, track orders, and pay online, while admins manage all bookings and business operations from a powerful dashboard. The platform is designed for real-world business needs, with a focus on automation, security, and a modern, mobile-friendly UI.
+                      <span className="font-semibold text-yellow-200">SKLdrycleaner's</span> is a full-stack MERN web application that transforms traditional laundry services into a seamless digital experience. Customers can register, book services, track orders, and pay online, while admins manage all bookings and business operations from a powerful dashboard. The platform is designed for real-world business needs, with a focus on automation, security, and a modern, mobile-friendly UI.<br/>
+                      <span className="block mt-2">With a robust admin dashboard, real-time notifications, and seamless payment integration, SKLdrycleaner's empowers local businesses to scale and deliver exceptional customer experiences. The intuitive interface ensures that both staff and customers can manage laundry tasks with ease, from any device.</span>
                     </>
                   ) : index === 1 ? (
                     <>
-                      <span className="font-semibold text-blue-200">PasteX</span> is a modern, privacy-first paste manager for quickly creating, editing, and searching text snippets in your browser. Enjoy a beautiful dark UI, glassmorphism effects, and instant usability—no accounts, no servers, just you and your notes.
+                      <span className="font-semibold text-blue-200">PasteX</span> is a modern, privacy-first paste manager for quickly creating, editing, and searching text snippets in your browser. Enjoy a beautiful dark UI, glassmorphism effects, and instant usability—no accounts, no servers, just you and your notes.<br/>
+                      <span className="block mt-2">PasteX is built for speed and simplicity, making it the perfect tool for developers, writers, and anyone who needs to manage quick notes or code snippets. With instant search, animated interactions, and a fully responsive design, PasteX redefines what a paste app can be.</span>
                     </>
                   ) : project.description}
                 </p>
@@ -122,7 +125,7 @@ const Projects = () => {
               {/* 3. Main Content Row: Left (content), Right (screenshots) */}
               <div className="flex flex-col md:flex-row gap-4 px-2 pb-4">
                 {/* Left: Content */}
-                <div className="flex-1 min-w-0 space-y-2">
+                <div className="flex-1 min-w-0 space-y-2 pl-20 pb-8">
                   {/* Key Features */}
                   <div>
                     <h4 className="text-sm font-semibold text-purple-200 mb-1">Key Features:</h4>
@@ -220,21 +223,23 @@ const Projects = () => {
                 {/* Right: Screenshot Carousel */}
                 <div className="flex-1 min-w-0 flex items-center justify-center">
                   {project.screenshots && project.screenshots.length > 0 && (
-                    <Carousel className="relative w-full max-w-xs mx-auto">
-                      <CarouselContent>
-                        {project.screenshots.map((src, i) => (
-                          <CarouselItem key={i} className="inline-flex items-center justify-center p-0 m-0">
-                            <img
-                              src={`/${src}`}
-                              alt={`${index === 0 ? 'Laundry' : 'PasteX'} screenshot ${i + 1}`}
-                              className={`rounded-lg shadow-lg object-contain max-h-40 border ${index === 0 ? 'border-cyan-400/30' : 'border-blue-400/30'} bg-white/10`}
-                            />
-                          </CarouselItem>
-                        ))}
-                      </CarouselContent>
-                      <CarouselPrevious />
-                      <CarouselNext />
-                    </Carousel>
+                    <div className="relative w-full max-w-xl mx-auto overflow-hidden">
+                      <Carousel className="w-full" plugins={[Autoplay({ delay: 3000, stopOnInteraction: false })]}>
+                        <CarouselContent>
+                          {project.screenshots.map((src, i) => (
+                            <CarouselItem key={i} className="inline-flex items-center justify-center p-0 m-0">
+                              <img
+                                src={`/${src}`}
+                                alt={`${index === 0 ? 'Laundry' : 'PasteX'} screenshot ${i + 1}`}
+                                className={`rounded-2xl shadow-lg h-80 w-full object-fill max-w-xl border ${index === 0 ? 'border-cyan-400/30' : 'border-blue-400/30'} bg-white/10`}
+                              />
+                            </CarouselItem>
+                          ))}
+                        </CarouselContent>
+                        <CarouselPrevious className={`!left-2 ${index === 0 ? 'bg-cyan-500 text-white ring-2 ring-white' : 'bg-blue-500 text-white ring-2 ring-white'}`} />
+                        <CarouselNext className={`!right-2 ${index === 0 ? 'bg-cyan-500 text-white ring-2 ring-white' : 'bg-blue-500 text-white ring-2 ring-white'}`} />
+                      </Carousel>
+                    </div>
                   )}
                 </div>
               </div>

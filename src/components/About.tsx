@@ -70,8 +70,7 @@ const About = () => {
               <div className="border-l-4 border-secondary pl-4">
                 <h4 className="font-semibold text-purple-200">Focus Areas</h4>
                 <p className="text-gray-100">
-                  Learning full-stack web development with focus on MERN stack, 
-                  eager to build efficient and user-friendly applications.
+                  Mastering full-stack web development with a focus on the MERN stack and 3D web integration. Eager to build efficient, interactive, and visually engaging applications.
                 </p>
               </div>
             </div>
