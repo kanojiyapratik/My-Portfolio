@@ -3,6 +3,15 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, Text, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
+// Suppress GLTF warnings for unknown extensions
+const originalWarn = console.warn;
+console.warn = (...args) => {
+  if (args[0] && typeof args[0] === 'string' && args[0].includes('THREE.GLTFLoader: Unknown extension')) {
+    return; // Suppress GLTF extension warnings
+  }
+  originalWarn.apply(console, args);
+};
+
 // 3D Sun Model Component
 const Sun = () => {
   const sunRef = useRef<THREE.Group>(null);
