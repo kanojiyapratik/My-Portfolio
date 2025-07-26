@@ -78,16 +78,16 @@ const Projects = () => {
       {/* SVG code pattern overlay */}
       <svg className="absolute inset-0 w-full h-full opacity-10 animate-pulse z-0" style={{pointerEvents:'none'}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1440 320"><path fill="#00bcd4" fillOpacity="0.2" d="M0,160L60,176C120,192,240,224,360,229.3C480,235,600,213,720,197.3C840,181,960,171,1080,181.3C1200,192,1320,224,1380,240L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"/></svg>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-cyan-200 mb-4 font-mono">
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-cyan-200 mb-4 font-mono">
             My Projects
           </h2>
-          <p className="text-blue-100 text-lg max-w-2xl mx-auto">
+          <p className="text-blue-100 text-base sm:text-lg max-w-2xl mx-auto px-4">
             Here are the major projects I've worked on during my learning journey as a fresher developer
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <Card
               key={index}
@@ -96,36 +96,33 @@ const Projects = () => {
                 ${index === 1 ? 'lg:col-span-2 border-2 border-blue-400/60 shadow-xl relative bg-white/20 backdrop-blur-2xl' : ''}`}
             >
               {/* 1. Centered Heading */}
-              <div className="w-full text-center pt-4 pb-2">
-                <CardTitle className="text-2xl font-bold text-cyan-200">{project.title}</CardTitle>
+              <div className="w-full text-center pt-4 pb-2 px-4 relative">
+                <CardTitle className="text-xl sm:text-2xl font-bold text-cyan-200 pr-16 sm:pr-0">{project.title}</CardTitle>
                 {index === 1 && (
                   <span className="inline-block mt-1 px-2 py-0.5 text-xs font-bold rounded bg-blue-300 text-blue-900 shadow-sm animate-pulse ml-2">Modern App</span>
                 )}
                 {index === 0 && (
                   <span className="inline-block mt-1 px-2 py-0.5 text-xs font-bold rounded bg-yellow-300 text-yellow-900 shadow-sm animate-pulse ml-2">Featured Project</span>
                 )}
-                <Badge className={`ml-2 ${project.statusColor} text-white`}>{project.status}</Badge>
               </div>
-              {/* 2. Project Description Full Width */}
-              <div className="w-full px-12 pb-2">
-                <p className="text-blue-100 text-base text-center md:text-left max-w-6xl mx-auto">
-                  {index === 0 ? (
-                    <>
-                      <span className="font-semibold text-yellow-200">SKLdrycleaner's</span> is a full-stack MERN web application that transforms traditional laundry services into a seamless digital experience. Customers can register, book services, track orders, and pay online, while admins manage all bookings and business operations from a powerful dashboard. The platform is designed for real-world business needs, with a focus on automation, security, and a modern, mobile-friendly UI.<br/>
-                      <span className="block mt-2">With a robust admin dashboard, real-time notifications, and seamless payment integration, SKLdrycleaner's empowers local businesses to scale and deliver exceptional customer experiences. The intuitive interface ensures that both staff and customers can manage laundry tasks with ease, from any device.</span>
-                    </>
-                  ) : index === 1 ? (
-                    <>
-                      <span className="font-semibold text-blue-200">PasteX</span> is a modern, privacy-first paste manager for quickly creating, editing, and searching text snippets in your browser. Enjoy a beautiful dark UI, glassmorphism effects, and instant usability—no accounts, no servers, just you and your notes.<br/>
-                      <span className="block mt-2">PasteX is built for speed and simplicity, making it the perfect tool for developers, writers, and anyone who needs to manage quick notes or code snippets. With instant search, animated interactions, and a fully responsive design, PasteX redefines what a paste app can be.</span>
-                    </>
-                  ) : project.description}
-                </p>
+              {/* 2. Status Badge */}
+              <div className="absolute top-4 right-4 z-10">
+                <div className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium text-white ${project.statusColor}`}>
+                  <project.icon className="w-3 h-3 mr-1" />
+                  <span className="hidden sm:inline">{project.status}</span>
+                  <span className="sm:hidden">•</span>
+                </div>
               </div>
+
               {/* 3. Main Content Row: Left (content), Right (screenshots) */}
-              <div className="flex flex-col md:flex-row gap-4 px-2 pb-4">
+              <div className="flex flex-col lg:flex-row gap-4 px-2 pb-4">
                 {/* Left: Content */}
-                <div className="flex-1 min-w-0 space-y-2 pl-20 pb-8">
+                <div className="flex-1 min-w-0 space-y-2 pl-4 lg:pl-20 pb-8 order-2 lg:order-1">
+                  {/* Description */}
+                  <p className="text-blue-100 text-sm sm:text-base leading-relaxed">
+                    {project.description}
+                  </p>
+
                   {/* Key Features */}
                   <div>
                     <h4 className="text-sm font-semibold text-purple-200 mb-1">Key Features:</h4>
@@ -138,6 +135,7 @@ const Projects = () => {
                       ))}
                     </ul>
                   </div>
+
                   {/* Technologies */}
                   <div>
                     <h4 className="text-sm font-semibold text-purple-200 mb-1">Technologies Used:</h4>
@@ -149,51 +147,7 @@ const Projects = () => {
                       ))}
                     </div>
                   </div>
-                  {/* Extra Sections (Business Impact, Tech Stack, Why PasteX) */}
-                  {index === 0 && (
-                    <div className="bg-cyan-900/30 border-l-4 border-yellow-300 p-1 rounded-lg shadow-inner">
-                      <h4 className="text-yellow-200 font-semibold mb-1">Business Impact</h4>
-                      <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
-                        <li>Automates bookings, payments, and order tracking for both customers and staff</li>
-                        <li>Reduces manual errors and increases operational efficiency</li>
-                        <li>Improves customer satisfaction with real-time updates and easy access</li>
-                        <li>Enables business growth by supporting online and offline workflows</li>
-                      </ul>
-                    </div>
-                  )}
-                  {index === 0 && (
-                    <div className="bg-gradient-to-r from-cyan-800/40 to-purple-900/30 border-l-4 border-cyan-400 p-1 rounded-lg mt-0.5">
-                      <h4 className="text-cyan-200 font-semibold mb-1">Tech Stack & Integrations</h4>
-                      <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
-                        <li>MERN stack: MongoDB, Express.js, React.js, Node.js</li>
-                        <li>Authentication & authorization for secure access</li>
-                        <li>Payment gateway integration for online transactions</li>
-                        <li>Responsive design with Tailwind CSS</li>
-                        <li>Admin dashboard for business analytics and control</li>
-                      </ul>
-                    </div>
-                  )}
-                  {index === 1 && (
-                    <div className="bg-gradient-to-r from-blue-800/40 to-purple-900/30 border-l-4 border-blue-400 p-1 rounded-lg mt-0.5">
-                      <h4 className="text-blue-200 font-semibold mb-1">Tech Stack & Integrations</h4>
-                      <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
-                        <li>React (Vite) & Redux Toolkit for fast, stateful UI</li>
-                        <li>Tailwind CSS for modern, responsive design</li>
-                        <li>Lucide Icons & React Hot Toast for UX polish</li>
-                        <li>All data stored in browser localStorage for privacy</li>
-                      </ul>
-                    </div>
-                  )}
-                  {index === 1 && (
-                    <div className="bg-blue-900/30 border-l-4 border-blue-300 p-1 rounded-lg shadow-inner mt-0.5">
-                      <h4 className="text-blue-200 font-semibold mb-1">Why PasteX?</h4>
-                      <ul className="list-disc pl-5 text-blue-100 text-sm space-y-1">
-                        <li>No sign-up, no server—just instant, private note-taking</li>
-                        <li>Perfect for developers, writers, and anyone needing quick, beautiful text management</li>
-                        <li>Works offline and on any device</li>
-                      </ul>
-                    </div>
-                  )}
+
                   {/* Action Buttons */}
                   <div className="flex space-x-3 pt-2">
                     <a
@@ -220,8 +174,9 @@ const Projects = () => {
                     </a>
                   </div>
                 </div>
+
                 {/* Right: Screenshot Carousel */}
-                <div className="flex-1 min-w-0 flex items-center justify-center">
+                <div className="flex-1 min-w-0 flex items-center justify-center order-1 lg:order-2">
                   {project.screenshots && project.screenshots.length > 0 && (
                     <div className="relative w-full max-w-xl mx-auto overflow-hidden">
                       <Carousel className="w-full" plugins={[Autoplay({ delay: 3000, stopOnInteraction: false })]}>
