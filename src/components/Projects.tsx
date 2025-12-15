@@ -1,26 +1,79 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Clock, Recycle } from "lucide-react";
+import { ExternalLink, Github, Clock, ChevronDown } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import Autoplay from 'embla-carousel-autoplay';
+import { useState } from "react";
 
 const Projects = () => {
+  const [expandedProject, setExpandedProject] = useState(null);
   const projects = [
+    {
+      title: "3D Model Configuration SaaS Platform (Tikitech - Enterprise Project)",
+      description:
+        "Comprehensive full-stack SaaS platform for 3D model configuration and management. Built from scratch as an independent project during 3-month training period, featuring multi-tenant architecture, role-based access control, real-time 3D visualization, and cloud deployment.",
+      status: "Completed",
+      statusColor: "bg-blue-600",
+      icon: Clock,
+      technologies: [
+        "React",
+        "React Three Fiber",
+        "Three.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "AWS S3",
+        "SendGrid",
+        "JWT",
+        "Tailwind CSS"
+      ],
+      features: [
+        "Multi-User Role System: Admin, Manager, Employee, and custom role combinations with granular permissions.",
+        "3D Viewer & Configuration: React Three Fiber + Three.js for interactive model manipulation (rotation, zoom, pan).",
+        "Dynamic UI Widgets: Real-time configuration tools for doors, drawers, textures, lighting, and material customization.",
+        "Authentication & Security: JWT-based auth, bcrypt password hashing, role-based access control (RBAC), password reset with OTP.",
+        "Model Management: Upload, manage, and delete 3D models with AWS S3 integration and automatic asset cleanup.",
+        "Configuration Persistence: Save/load user customizations with texture files and real-time collaboration features.",
+        "Activity Logging & Audit Trails: Tamper-evident hashing for complete activity monitoring and accountability.",
+        "Email Integration: SendGrid/Nodemailer for notifications, password resets, and user communications.",
+        "Admin Dashboard: Complete user management, analytics, and system monitoring capabilities.",
+        "Cloud Deployment: Production-ready setup on Render with proper environment configuration.",
+        "Full-Stack: Handled all technical decisions independently with minimal guidance—requirements to deployment.",
+        "October 2024 – Present"
+      ],
+      github: "",
+      live: "",
+      screenshots: [
+        "3dsaas1.png",
+        "3dsaas2.png",
+        "3dsaas3.png",
+        "3dsaas4.png",
+      ],
+    },
     {
       title: "SKLdrycleaner's – Online Laundry Service Platform",
       description:
-        "A full-stack MERN web application built for SKLdrycleaner's, streamlining laundry service management for both customers and admins. The platform enables users to register, book services, track orders, and make payments online, while providing admins with a powerful dashboard to manage bookings and business operations. Designed with a modern, mobile-friendly UI and a focus on automation, SKLdrycleaner's brings local laundry services into the digital age.",
-      status: "In Progress",
-      statusColor: "bg-orange-500",
+        "Production-ready full-stack web application digitizing laundry services with scalable backend, interactive frontend, and real-time order management—enhancing customer engagement and operational efficiency.",
+      status: "Completed",
+      statusColor: "bg-green-500",
       icon: Clock,
-      technologies: ["React.js", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+      technologies: [
+        "React",
+        "Redux",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB"
+      ],
       features: [
-        "Customer registration & secure login",
-        "Online booking and real-time order tracking",
-        "Integrated payment system",
-        "Admin dashboard for managing all bookings and payments",
-        "Clean, responsive, and user-friendly interface",
+        "RESTful Backend: Express.js server with middleware, authentication, and scalable API routes.",
+        "Database Design: MongoDB with Mongoose ODM for efficient data modeling and queries.",
+        "State Management: Redux for centralized, predictable state and seamless data flow.",
+        "Production-Ready UI: Fully responsive React frontend with Tailwind CSS for modern UX.",
+        "Real-time Features: Service requests, order tracking, and customer interaction in a unified platform.",
+        "Performance: Mobile-first design with optimized load times across all devices.",
+        "June 2025 – August 2025"
       ],
       github: "https://github.com/skullpratik/Online-laundry-service",
       live: "https://6873481af0a864273768c3ec--amazing-monstera-60ff65.netlify.app/",
@@ -32,44 +85,39 @@ const Projects = () => {
       ],
     },
     {
-      title: "PasteX – Modern Paste Application",
+      title: "Industrial 3D Product Configurator (Western Refrigeration Limited – Client Project @ TikiTech)",
       description:
-        "PasteX is a sleek, modern web application for creating, editing, and managing text snippets (\"pastes\") right in your browser. Built with React, Redux, and Tailwind CSS, PasteX features a beautiful dark UI, glassmorphism effects, instant search, and a focus on privacy. All your pastes are stored locally for speed and security—no accounts, no servers, just you and your notes.",
+        "Responsive web-based 3D configurator enabling real-time customization of commercial refrigeration models (Visi Coolers, Deep Freezers, and more) for Western Refrigeration Limited.",
       status: "Completed",
       statusColor: "bg-green-500",
-      icon: Recycle,
-      technologies: ["React.js (Vite)", "Redux Toolkit", "Tailwind CSS", "Lucide Icons", "React Hot Toast"],
-      features: [
-        "Create, edit, and view pastes instantly",
-        "Modern dark UI with glassmorphism",
-        "Instant search and one-click copy",
-        "Local storage for privacy—no accounts needed",
-        "Responsive and animated design",
+      icon: Clock,
+      technologies: [
+        "React",
+        "React Three Fiber",
+        "Three.js",
+        "Blender",
+        "WebXR",
+        "MUI",
+        "Tailwind CSS"
       ],
-      github: "https://github.com/skullpratik/paste-application",
-      live: "https://steady-blancmange-d8e627.netlify.app/",
+      features: [
+        "GLTF/GLB model optimization (from Blender) for fast loading and high fidelity across desktop, mobile, and AR.",
+        "Modular UI panels with MUI + Tailwind for model switching and instant configuration updates (no reloads).",
+        "Immersive AR/WebXR to visualize products in real-world settings via the browser.",
+        "Advanced camera controls, dynamic lighting, and environment maps for photorealistic presentation.",
+        "Cross-device responsiveness and performance optimization for a polished UX.",
+        "August 2025 – October 2025"
+      ],
+      github: "https://github.com/skullpratik/3D-configurator",
+      live: "https://configurator3d.netlify.app/",
       screenshots: [
-        "paste1.png",
-        "paste2.png",
+        "Config6.png",
+        "Config2.png",
+        "Config3.png",
+        "Config4.png",
+        "Config5.png",
+        "Config1.png",
       ],
-    },
-    {
-      title: "3D Advertisement with Responsive Webpage",
-      description:
-        "Developed a dynamic and fully responsive 3D product visualization interface using Three.js, enabling users to interact with 3D models in real-time within a clean and intuitive web environment.",
-      status: "Completed",
-      statusColor: "bg-green-500",
-      icon: Clock, // You can change this to another icon if you prefer
-      technologies: ["HTML", "CSS", "JavaScript", "Three.js", "Blender"],
-      features: [
-        "Integrated optimized GLB/GLTF models exported from Blender for efficient rendering and performance.",
-        "Implemented custom camera controls, lighting effects, and precise model positioning to elevate visual engagement.",
-        "Built a modular UI panel to dynamically switch models and configurations without page reloads, enhancing user experience and flexibility.",
-        "Focused on performance optimization, cross-browser compatibility, and responsive design across devices.",
-        "June 2023 – July 2023"
-      ],
-      github: "https://github.com/skullpratik/Refridgerator--3d",
-      live: "https://refridgerator-3d.vercel.app/",
     },
   ];
 
@@ -83,7 +131,7 @@ const Projects = () => {
             My Projects
           </h2>
           <p className="text-blue-100 text-base sm:text-lg max-w-2xl mx-auto px-4">
-            Here are the major projects I've worked on during my learning journey as a fresher developer
+            Showcasing full-stack MERN applications and immersive 3D web experiences—from scalable backend systems to interactive frontends and AR/WebXR visualizations
           </p>
         </div>
 
@@ -91,18 +139,22 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className={`bg-white/10 border border-cyan-400/20 backdrop-blur-lg hover:shadow-cyan-400/30 transition-all duration-300 hover:-translate-y-1 animate-fade-in group
-                ${index === 0 ? 'lg:col-span-2 border-2 border-yellow-400/60 shadow-xl relative' : ''}
-                ${index === 1 ? 'lg:col-span-2 border-2 border-blue-400/60 shadow-xl relative bg-white/20 backdrop-blur-2xl' : ''}`}
+              className={`bg-white/10 border border-cyan-400/20 backdrop-blur-lg hover:shadow-cyan-400/30 transition-all duration-300 hover:-translate-y-1 animate-fade-in group project-card-float
+                ${index === 0 ? 'lg:col-span-2 border-2 border-blue-500/60 shadow-xl relative bg-white/20 backdrop-blur-2xl glow-pulse' : ''}
+                ${index === 1 ? 'lg:col-span-2 border-2 border-green-400/60 shadow-xl relative' : ''}
+                ${index === 2 ? 'lg:col-span-2 border-2 border-orange-400/60 shadow-xl relative' : ''}`}
             >
               {/* 1. Centered Heading */}
               <div className="w-full text-center pt-4 pb-2 px-4 relative">
                 <CardTitle className="text-xl sm:text-2xl font-bold text-cyan-200 pr-16 sm:pr-0">{project.title}</CardTitle>
-                {index === 1 && (
-                  <span className="inline-block mt-1 px-2 py-0.5 text-xs font-bold rounded bg-blue-300 text-blue-900 shadow-sm animate-pulse ml-2">Modern App</span>
-                )}
                 {index === 0 && (
-                  <span className="inline-block mt-1 px-2 py-0.5 text-xs font-bold rounded bg-yellow-300 text-yellow-900 shadow-sm animate-pulse ml-2">Featured Project</span>
+                  <span className="inline-block mt-1 px-2 py-0.5 text-xs font-bold rounded bg-blue-300 text-blue-900 shadow-sm animate-pulse ml-2">Enterprise SaaS</span>
+                )}
+                {index === 1 && (
+                  <span className="inline-block mt-1 px-2 py-0.5 text-xs font-bold rounded bg-green-300 text-green-900 shadow-sm animate-pulse ml-2">Full-Stack MERN</span>
+                )}
+                {index === 2 && (
+                  <span className="inline-block mt-1 px-2 py-0.5 text-xs font-bold rounded bg-orange-300 text-orange-900 shadow-sm animate-pulse ml-2">3D Specialist</span>
                 )}
               </div>
               {/* 2. Status Badge */}
@@ -127,13 +179,22 @@ const Projects = () => {
                   <div>
                     <h4 className="text-sm font-semibold text-purple-200 mb-1">Key Features:</h4>
                     <ul className="text-sm text-muted-foreground space-y-1">
-                      {project.features.map((feature, featureIndex) => (
+                      {project.features.slice(0, expandedProject === index ? project.features.length : 2).map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center text-blue-100">
-                          <span className={`w-2 h-2 rounded-full mr-2 flex-shrink-0 ${index === 0 ? 'bg-purple-300' : 'bg-blue-300'}`}></span>
+                          <span className={`w-2 h-2 rounded-full mr-2 flex-shrink-0 ${index === 0 ? 'bg-blue-300' : index === 1 ? 'bg-green-300' : 'bg-orange-300'}`}></span>
                           {feature}
                         </li>
                       ))}
                     </ul>
+                    {project.features.length > 2 && (
+                      <button
+                        onClick={() => setExpandedProject(expandedProject === index ? null : index)}
+                        className="mt-2 text-xs font-semibold text-cyan-300 hover:text-cyan-200 flex items-center gap-1 transition-colors"
+                      >
+                        {expandedProject === index ? 'Show Less' : `Read More (+${project.features.length - 2})`}
+                        <ChevronDown className={`w-3 h-3 transition-transform ${expandedProject === index ? 'rotate-180' : ''}`} />
+                      </button>
+                    )}
                   </div>
 
                   {/* Technologies */}
@@ -149,35 +210,46 @@ const Projects = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex space-x-3 pt-2">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1"
-                    >
-                      <Button variant="outline" size="sm" className="w-full">
-                        <Github className="w-4 h-4 mr-2" />
-                        View Code
-                      </Button>
-                    </a>
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1"
-                    >
-                      <Button size="sm" className="w-full">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Live Demo
-                      </Button>
-                    </a>
-                  </div>
+                  {(project.github || project.live) && (
+                    <div className="flex space-x-3 pt-2">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1"
+                        >
+                          <Button variant="outline" size="sm" className="w-full">
+                            <Github className="w-4 h-4 mr-2" />
+                            View Code
+                          </Button>
+                        </a>
+                      )}
+                      {project.live && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1"
+                        >
+                          <Button size="sm" className="w-full">
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Live Demo
+                          </Button>
+                        </a>
+                      )}
+                    </div>
+                  )}
+                  {(!project.github && !project.live) && (
+                    <p className="text-xs text-gray-400 italic pt-2">
+                      Confidential project - Links unavailable
+                    </p>
+                  )}
                 </div>
 
-                {/* Right: Screenshot Carousel */}
-                <div className="flex-1 min-w-0 flex items-center justify-center order-1 lg:order-2">
-                  {project.screenshots && project.screenshots.length > 0 && (
+                {/* Right: Screenshot Carousel (render only if screenshots exist) */}
+                {project.screenshots && project.screenshots.length > 0 && (
+                  <div className="flex-1 min-w-0 flex items-center justify-center order-1 lg:order-2">
                     <div className="relative w-full max-w-xl mx-auto overflow-hidden">
                       <Carousel className="w-full" plugins={[Autoplay({ delay: 3000, stopOnInteraction: false })]}>
                         <CarouselContent>
@@ -185,18 +257,18 @@ const Projects = () => {
                             <CarouselItem key={i} className="inline-flex items-center justify-center p-0 m-0">
                               <img
                                 src={`/${src}`}
-                                alt={`${index === 0 ? 'Laundry' : 'PasteX'} screenshot ${i + 1}`}
-                                className={`rounded-2xl shadow-lg h-80 w-full object-fill max-w-xl border ${index === 0 ? 'border-cyan-400/30' : 'border-blue-400/30'} bg-white/10`}
+                                alt={`${project.title} screenshot ${i + 1}`}
+                                className={`rounded-2xl shadow-lg h-80 w-full object-fill max-w-xl border ${index === 0 ? 'border-blue-400/30' : index === 1 ? 'border-green-400/30' : 'border-orange-400/30'} bg-white/10`}
                               />
                             </CarouselItem>
                           ))}
                         </CarouselContent>
-                        <CarouselPrevious className={`!left-2 ${index === 0 ? 'bg-cyan-500 text-white ring-2 ring-white' : 'bg-blue-500 text-white ring-2 ring-white'}`} />
-                        <CarouselNext className={`!right-2 ${index === 0 ? 'bg-cyan-500 text-white ring-2 ring-white' : 'bg-blue-500 text-white ring-2 ring-white'}`} />
+                        <CarouselPrevious className={`!left-2 ${index === 0 ? 'bg-blue-500 text-white ring-2 ring-white' : index === 1 ? 'bg-green-500 text-white ring-2 ring-white' : 'bg-orange-500 text-white ring-2 ring-white'}`} />
+                        <CarouselNext className={`!right-2 ${index === 0 ? 'bg-blue-500 text-white ring-2 ring-white' : index === 1 ? 'bg-green-500 text-white ring-2 ring-white' : 'bg-orange-500 text-white ring-2 ring-white'}`} />
                       </Carousel>
                     </div>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
             </Card>
           ))}

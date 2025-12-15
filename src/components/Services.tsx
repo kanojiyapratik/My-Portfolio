@@ -5,46 +5,46 @@ const Services = () => {
   const services = [
     {
       icon: Monitor,
-      title: "Frontend Development",
-      description: "Building responsive and interactive user interfaces using React.js and modern CSS frameworks.",
+      title: "3D Web & Product Configurators",
+      description: "Interactive 3D experiences using Three.js, React Three Fiber, and WebXR for AR-ready product visualization.",
       features: [
-        "React.js Development",
-        "Responsive Design",
-        "Tailwind CSS",
-        "JavaScript ES6+"
+        "Three.js & R3F integrations",
+        "GLTF/GLB optimization",
+        "Advanced camera & lighting",
+        "Environment maps & HDRI"
       ]
     },
     {
       icon: Database,
-      title: "Backend Development", 
-      description: "Learning server-side development with Node.js and Express, creating APIs and managing databases.",
+      title: "MERN Stack Development", 
+      description: "End-to-end web apps with React, Node.js, Express, and MongoDB using scalable architecture and clean APIs.",
       features: [
-        "Node.js & Express",
-        "REST API Development",
-        "MongoDB Integration",
-        "Basic Authentication"
+        "REST API design",
+        "Authentication & state (Redux)",
+        "MongoDB schema design",
+        "Vite-based tooling"
       ]
     },
     {
       icon: Code,
-      title: "Team Collaboration",
-      description: "Strong team player with experience in collaborative projects and version control systems.",
+      title: "UI Systems & Performance",
+      description: "Responsive design with Tailwind/MUI, performance optimization, lazy loading, and asset compression.",
       features: [
-        "Git Version Control",
-        "Team Projects",
-        "Communication Skills",
-        "Collaborative Learning"
+        "Tailwind CSS & MUI",
+        "Lazy loading & code-splitting",
+        "Texture compression",
+        "Cross-browser compatibility"
       ]
     },
     {
       icon: Smartphone,
-      title: "Continuous Learning",
-      description: "Passionate about learning new technologies and staying updated with industry trends and best practices.",
+      title: "AR/WebXR & XR Interactions",
+      description: "Immersive AR previews and XR-based interactions to bridge digital experiences with physical validation.",
       features: [
-        "Self-Learning",
-        "Problem Solving",
-        "Adaptability",
-        "Growth Mindset"
+        "WebXR integration",
+        "USDZ export support",
+        "Device responsiveness",
+        "In-app screenshot export"
       ]
     }
   ];
@@ -96,7 +96,7 @@ const Services = () => {
         {/* Process Section */}
         <div className="mt-16 sm:mt-20">
           <h3 className="text-xl sm:text-2xl font-semibold text-center text-cyan-200 mb-8 sm:mb-12">
-            My Learning Approach
+            How I Deliver
           </h3>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -104,9 +104,9 @@ const Services = () => {
               <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto">
                 <span className="text-2xl font-bold text-white">1</span>
               </div>
-              <h4 className="text-lg font-semibold text-purple-200">Learn & Understand</h4>
+              <h4 className="text-lg font-semibold text-purple-200">Discover & Scope</h4>
               <p className="text-blue-100 text-sm">
-                Understanding new concepts, technologies, and best practices through documentation and tutorials.
+                Align on requirements, scope features, and define KPIs for business impact.
               </p>
             </div>
 
@@ -114,9 +114,9 @@ const Services = () => {
               <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto">
                 <span className="text-2xl font-bold text-white">2</span>
               </div>
-              <h4 className="text-lg font-semibold text-purple-200">Practice & Build</h4>
+              <h4 className="text-lg font-semibold text-purple-200">Design & Implement</h4>
               <p className="text-blue-100 text-sm">
-                Applying learned concepts by building projects and practicing coding challenges regularly.
+                Build modular UI and services; integrate 3D, APIs, and state with best practices.
               </p>
             </div>
 
@@ -124,9 +124,9 @@ const Services = () => {
               <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto">
                 <span className="text-2xl font-bold text-white">3</span>
               </div>
-              <h4 className="text-lg font-semibold text-purple-200">Review & Improve</h4>
+              <h4 className="text-lg font-semibold text-purple-200">Optimize & Ship</h4>
               <p className="text-blue-100 text-sm">
-                Analyzing my work, seeking feedback, and continuously improving my coding skills and techniques.
+                Optimize performance, validate across devices, and ship with confidence.
               </p>
             </div>
           </div>

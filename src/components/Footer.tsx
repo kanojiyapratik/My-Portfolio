@@ -20,7 +20,7 @@ const Footer = () => {
               Pratik Kanojiya
             </button>
             <p className="text-background/70 mt-2 text-xs sm:text-sm">
-              Full Stack MERN Developer
+              3D Web Developer & Full-Stack Engineer (MERN · Three.js · WebXR)
             </p>
           </div>
 
@@ -63,7 +63,7 @@ const Footer = () => {
         {/* Divider */}
         <div className="border-t border-background/20 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center">
           <p className="text-background/60 text-xs">
-            Built with React.js, TypeScript, and Tailwind CSS
+            Built with React, TypeScript, Tailwind, and Three.js
           </p>
         </div>
       </div>

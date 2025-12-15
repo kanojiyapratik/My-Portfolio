@@ -5,32 +5,69 @@ import { Code, Database, Globe, Cpu } from "lucide-react";
 const Skills = () => {
   const skillCategories = [
     {
-      icon: Globe,
-      title: "Frontend Development",
-      skills: ["HTML", "CSS", "JavaScript", "React.js", "Tailwind CSS", "Responsive Design", "Three.js"],
-      color: "bg-blue-500"
-    },
-    {
-      icon: Database,
-      title: "Backend Development", 
-      skills: ["Node.js", "Express.js", "MongoDB", "REST APIs", "Authentication", "Database Design"],
+      icon: Code,
+      title: "Backend & Server",
+      skills: [
+        "Node.js",
+        "Express.js",
+        "REST APIs",
+        "Role-Based Access Control (RBAC)",
+        "JWT Authentication & Security",
+        "Middleware & Server Architecture",
+        "Async/Await & Callbacks",
+        "AWS S3 Integration"
+      ],
       color: "bg-green-500"
     },
     {
+      icon: Database,
+      title: "Database & Data", 
+      skills: [
+        "MongoDB",
+        "Mongoose ODM",
+        "Data Modeling",
+        "Query Optimization",
+        "Indexing & Aggregation",
+        "Activity Logging & Audit Trails",
+        "Database Design Patterns"
+      ],
+      color: "bg-emerald-500"
+    },
+    {
+      icon: Globe,
+      title: "Frontend & State",
+      skills: [
+        "React.js",
+        "Redux & Redux Thunk",
+        "Hooks & Context API",
+        "Tailwind CSS",
+        "Material-UI (MUI)",
+        "Component Architecture"
+      ],
+      color: "bg-blue-500"
+    },
+    {
       icon: Cpu,
-      title: "Tools & Technologies",
-      skills: ["Git", "GitHub", "VS Code", "Postman", "Figma", "Chrome DevTools", "Blender"],
+      title: "3D Graphics & AR",
+      skills: [
+        "Three.js & R3F",
+        "Blender (Model Optimization)",
+        "GLTF/GLB/USDZ Assets",
+        "WebXR & AR Integration",
+        "Camera & Lighting Control",
+        "Performance Optimization"
+      ],
       color: "bg-orange-500"
     }
   ];
 
   const coreSkills = [
-    { name: "Data Structures", level: 85 },
-    { name: "React.js", level: 90 },
-    { name: "Node.js", level: 85 },
-    { name: "MongoDB", level: 80 },
-    { name: "Problem Solving", level: 88 },
-    { name: "Three.js", level: 80 },
+    { name: "JavaScript / TypeScript", level: 92 },
+    { name: "React.js & State Management", level: 90 },
+    { name: "Node.js & Express Backend", level: 88 },
+    { name: "MongoDB & Data Design", level: 85 },
+    { name: "Three.js & WebXR", level: 85 },
+    { name: "Full-Stack Architecture", level: 88 },
   ];
 
   return (
@@ -48,11 +85,11 @@ const Skills = () => {
         </div>
 
         {/* Skill Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 lg:mb-16 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-12 lg:mb-16 justify-center max-w-5xl mx-auto">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="bg-white/10 border border-cyan-400/20 backdrop-blur-lg hover:shadow-cyan-400/30 transition-all duration-300 hover:-translate-y-1 animate-fade-in group">
+            <Card key={index} className="bg-white/10 border border-cyan-400/20 backdrop-blur-lg hover:shadow-cyan-400/30 transition-all duration-300 hover:-translate-y-1 animate-fade-in group stagger-item project-card-float">
               <CardContent className="p-4 sm:p-6">
-                <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 ${category.color} rounded-lg mb-3 sm:mb-4 group-hover:scale-110 transition-transform`}>
+                <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 ${category.color} rounded-lg mb-3 sm:mb-4 group-hover:scale-110 transition-transform icon-rotate-hover`}>
                   <category.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                 </div>
                 <h3 className="text-base sm:text-lg font-semibold text-purple-200 mb-2 sm:mb-3">
@@ -60,7 +97,7 @@ const Skills = () => {
                 </h3>
                 <div className="flex flex-wrap gap-1 sm:gap-2">
                   {category.skills.map((skill, skillIndex) => (
-                    <Badge key={skillIndex} variant="secondary" className="text-xs">
+                    <Badge key={skillIndex} variant="secondary" className="text-xs skill-badge-hover cursor-pointer">
                       {skill}
                     </Badge>
                   ))}

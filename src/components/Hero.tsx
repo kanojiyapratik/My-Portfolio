@@ -36,17 +36,23 @@ const Hero = () => {
                     Pratik Kanojiya
                   </span>{" "}
                   <br />
-                  <span className="text-yellow-300 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold">Full Stack MERN Developer & 3D Web Integrator</span>
+                  <span className="text-yellow-300 text-sm sm:text-lg md:text-2xl lg:text-3xl font-semibold whitespace-nowrap">Full-Stack Developer · 3D Specialist</span>
                 </h1>
                 <p className="text-sm sm:text-base md:text-lg text-cyan-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                  Full Stack MERN & 3D Web Developer building modern web applications with integrated interactive 3D models. Passionate about creating dynamic, user-friendly, and visually stunning digital experiences.
+                  I craft scalable full-stack applications with React, Node.js, and MongoDB—plus immersive 3D experiences using Three.js and WebXR. Specialized in AR/WebXR product configurators and production-ready MERN applications.
                 </p>
               </div>
 
               {/* Experience Badge */}
-              <div className="inline-flex items-center bg-gradient-to-r from-cyan-700 via-blue-800 to-purple-900/80 backdrop-blur-sm rounded-full px-4 sm:px-5 py-2.5 sm:py-3 text-cyan-100 border border-cyan-400/30 shadow-lg">
-                <span className="text-xl sm:text-2xl font-bold mr-2 text-yellow-300">1+</span>
-                <span className="text-xs sm:text-sm font-medium">Year Experience</span>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <div className="inline-flex items-center bg-gradient-to-r from-cyan-700 via-blue-800 to-purple-900/80 backdrop-blur-sm rounded-full px-4 sm:px-5 py-2.5 sm:py-3 text-cyan-100 border border-cyan-400/30 shadow-lg">
+                  <span className="text-lg sm:text-xl font-bold mr-2 text-cyan-300">💻</span>
+                  <span className="text-xs sm:text-sm font-medium">Full-Stack MERN</span>
+                </div>
+                <div className="inline-flex items-center bg-gradient-to-r from-purple-700 via-blue-800 to-cyan-900/80 backdrop-blur-sm rounded-full px-4 sm:px-5 py-2.5 sm:py-3 text-cyan-100 border border-purple-400/30 shadow-lg">
+                  <span className="text-lg sm:text-xl font-bold mr-2 text-yellow-300">🎨</span>
+                  <span className="text-xs sm:text-sm font-medium">3D · AR/WebXR</span>
+                </div>
               </div>
 
               {/* Action Buttons */}
@@ -54,7 +60,7 @@ const Hero = () => {
                 <Button 
                   onClick={scrollToProjects}
                   size="lg" 
-                  className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 text-white hover:from-cyan-300 hover:to-purple-400 border-0 group font-bold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 text-white hover:from-cyan-300 hover:to-purple-400 border-0 group font-bold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300 btn-glow-hover"
                 >
                   View My Work
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -62,7 +68,7 @@ const Hero = () => {
                 <Button 
                   onClick={scrollToContact}
                   size="lg" 
-                  className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 text-white hover:from-cyan-300 hover:to-purple-400 border-0 group font-bold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 text-white hover:from-cyan-300 hover:to-purple-400 border-0 group font-bold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300 btn-glow-hover"
                 >
                   <Play className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                   Get In Touch
@@ -75,7 +81,7 @@ const Hero = () => {
                   href="https://linkedin.com/in/pratik-kanojiya-060250252"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 sm:p-4 bg-gradient-to-br from-cyan-700 via-blue-800 to-purple-900 text-cyan-100 rounded-full hover:scale-110 hover:bg-cyan-800/80 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="p-3 sm:p-4 bg-gradient-to-br from-cyan-700 via-blue-800 to-purple-900 text-cyan-100 rounded-full hover:scale-110 hover:bg-cyan-800/80 transition-all duration-300 shadow-lg hover:shadow-xl icon-rotate-hover"
                 >
                   <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />
                 </a>
@@ -83,13 +89,13 @@ const Hero = () => {
                   href="https://github.com/skullpratik"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 sm:p-4 bg-gradient-to-br from-cyan-700 via-blue-800 to-purple-900 text-cyan-100 rounded-full hover:scale-110 hover:bg-cyan-800/80 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="p-3 sm:p-4 bg-gradient-to-br from-cyan-700 via-blue-800 to-purple-900 text-cyan-100 rounded-full hover:scale-110 hover:bg-cyan-800/80 transition-all duration-300 shadow-lg hover:shadow-xl icon-rotate-hover"
                 >
                   <Github className="h-5 w-5 sm:h-6 sm:w-6" />
                 </a>
                 <a
                   href="mailto:pratikkanojiya9324@gmail.com"
-                  className="p-3 sm:p-4 bg-gradient-to-br from-cyan-700 via-blue-800 to-purple-900 text-cyan-100 rounded-full hover:scale-110 hover:bg-cyan-800/80 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="p-3 sm:p-4 bg-gradient-to-br from-cyan-700 via-blue-800 to-purple-900 text-cyan-100 rounded-full hover:scale-110 hover:bg-cyan-800/80 transition-all duration-300 shadow-lg hover:shadow-xl icon-rotate-hover"
                 >
                   <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
                 </a>

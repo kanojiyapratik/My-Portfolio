@@ -12,8 +12,8 @@ const About = () => {
     {
       icon: Code,
       title: "Projects",
-      value: "3+",
-      description: "Learning Projects"
+      value: "5+",
+      description: "Full-Stack & 3D"
     },
     {
       icon: Users,
@@ -24,8 +24,8 @@ const About = () => {
     {
       icon: Trophy,
       title: "Status",
-      value: "Fresher",
-      description: "Ready to Learn"
+      value: "Employed",
+      description: "3D Web Developer @ Tiki tech"
     }
   ];
 
@@ -36,41 +36,35 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-cyan-200 mb-4 font-mono">
-            About Me
+            Profile Summary
           </h2>
-          <p className="text-blue-100 text-base sm:text-lg max-w-2xl mx-auto px-4">
-            Designing Solutions, Not Just Visuals
+          <p className="text-blue-100 text-base sm:text-lg max-w-5xl mx-auto px-4">
+            Full-Stack Developer with hands-on experience building SaaS platforms featuring real-time 3D product configurators and asset management systems. Skilled in React, Node.js, Express, MongoDB, React Three Fiber, Three.js, AWS S3, and JWT authentication. Strong focus on creating secure, scalable, and user-centric applications with optimized performance, clean architecture, and responsive UI. Passionate about solving real-world problems using modern web technologies.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="space-y-4 lg:space-y-6 animate-fade-in order-2 lg:order-1">
-            <h3 className="text-xl sm:text-2xl font-semibold text-purple-200">
-              Hi, I'm Pratik Kanojiya — a fresh Computer Science graduate eager to start my career in web development.
-            </h3>
-            
-            <p className="text-blue-100 leading-relaxed text-sm sm:text-base">
-              As a fresher, I'm excited to apply my academic knowledge to real-world challenges. 
-              I recently completed my B.Tech in Computer Science from United College of Engineering 
-              and Management, Prayagraj, and I'm passionate about learning new technologies and 
-              building meaningful web applications.
-            </p>
 
             <div className="space-y-3 lg:space-y-4">
               <div className="border-l-4 border-primary pl-3 sm:pl-4">
-                <h4 className="font-semibold text-purple-200 text-sm sm:text-base">Education</h4>
+                <h4 className="font-semibold text-purple-200 text-sm sm:text-base">Current Role</h4>
                 <p className="text-gray-100 text-xs sm:text-sm">
-                  <strong>B.Tech in Computer Science</strong><br />
-                  United College of Engineering and Management, Prayagraj<br />
-                  2021–2025
+                  <strong>Tiki Tech – Junior Full Stack Developer</strong> (November 2025 – Present)<br />
+                  • Developing a SaaS platform using MERN with role-based access, REST APIs, JWT auth, and AWS S3 storage.<br />
+                  • Building 3D visualization features using React Three Fiber & Three.js to enhance product configuration.<br />
+                  • Creating secure, scalable applications with optimized performance and responsive UI.
                 </p>
               </div>
 
               <div className="border-l-4 border-secondary pl-3 sm:pl-4">
-                <h4 className="font-semibold text-purple-200 text-sm sm:text-base">Focus Areas</h4>
+                <h4 className="font-semibold text-purple-200 text-sm sm:text-base">Training Experience</h4>
                 <p className="text-gray-100 text-xs sm:text-sm">
-                  Mastering full-stack web development with a focus on the MERN stack and 3D web integration. Eager to build efficient, interactive, and visually engaging applications.
+                  <strong>Tiki Tech – Developer Trainee</strong> (Aug 2025 – Oct 2025)<br />
+                  • Assisted in building 3D configurators using React, Three.js & R3F for enterprise demos.<br />
+                  • Enhanced GLTF/GLB assets and WebXR previews, reducing 3D model load time by ~35%.<br />
+                  • Improved AR/VR rendering smoothness across devices with optimized asset handling.
                 </p>
               </div>
             </div>
