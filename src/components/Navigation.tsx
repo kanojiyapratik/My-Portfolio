@@ -76,7 +76,7 @@ const Navigation = () => {
 
           {/* Download CV Button */}
           <div className="hidden md:block">
-            <a href="/pratik resume updated.pdf" download>
+            <a href="/MYResumeOptimized.pdf" download>
               <Button 
                 variant={isScrolled ? "outline" : "secondary"}
                 className={`group transition-all duration-300 ${
@@ -125,7 +125,7 @@ const Navigation = () => {
               </button>
             ))}
             <div className="pt-4">
-              <a href="/pratik resume updated.pdf" download>
+              <a href="/MYResumeOptimized.pdf" download>
                 <Button variant="outline" className="w-full group">
                   <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
                   Download CV
