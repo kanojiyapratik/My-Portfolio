@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Github, Linkedin, Mail } from "lucide-react";
 import ThreeSolarSystem from './ThreeSolarSystem';
 
-const profileImage = "/lovable-uploads/37b42b33-ab28-49d7-9dce-4ccf5b67270e.png";
+const profileImage = "/mypic.jpg";
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -36,7 +36,7 @@ const Hero = () => {
                     Pratik Kanojiya
                   </span>{" "}
                   <br />
-                  <span className="text-yellow-300 text-sm sm:text-lg md:text-2xl lg:text-3xl font-semibold whitespace-nowrap">Full-Stack Developer · 3D Specialist</span>
+                  <span className="text-yellow-300 text-sm sm:text-lg md:text-2xl lg:text-3xl font-semibold whitespace-nowrap">Full-Stack Developer · Three.js Developer</span>
                 </h1>
                 <p className="text-sm sm:text-base md:text-lg text-cyan-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                   I craft scalable full-stack applications with React, Node.js, and MongoDB—plus immersive 3D experiences using Three.js and WebXR. Specialized in AR/WebXR product configurators and production-ready MERN applications.
@@ -110,7 +110,7 @@ const Hero = () => {
                   <img
                     src={profileImage}
                     alt="Pratik Kanojiya"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover scale-150 object-center"
                   />
                 </div>
                 {/* Floating Badge */}

@@ -109,14 +109,12 @@ const Projects = () => {
         "August 2025 – October 2025"
       ],
       github: "https://github.com/skullpratik/3D-configurator",
-      live: "https://configurator3d.netlify.app/",
+      live: "https://3drefridgerator5.vercel.app/",
       screenshots: [
-        "Config6.png",
-        "Config2.png",
-        "Config3.png",
-        "Config4.png",
-        "Config5.png",
-        "Config1.png",
+        "demo1.png",
+        "demo2.png",
+        "demo3.png",
+        "demo4.png",
       ],
     },
   ];
